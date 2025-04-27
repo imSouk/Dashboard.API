@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "uh7bAbQqUu8=",
+  "dgSpecHash": "P8wm1reTwjo=",
   "success": true,
-  "projectFilePath": "C:\\Users\\pedro\\Desktop\\projetos\\CleanArchStudy\\Dashboard_webAPI\\Dashboard_webAPI\\Dashboard_webAPI.csproj",
+  "projectFilePath": "C:\\Users\\pedro\\Desktop\\repositorios\\Dashboard.API\\Dashboard_webAPI\\Dashboard_webAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pedro\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\pedro\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<DashboardContext>(options =>
 {
 
-    options.UseSqlServer("Server = PEDRO-DESKTOP\\SQLEXPRESS01;Database=Dashboard;Trusted_Connection=True;TrustServerCertificate=True;");
+    options.UseSqlServer("Server=PEDRO-DESKTOP;Database=PEDRO-DESKTOP;Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True;");
 
 });
 
