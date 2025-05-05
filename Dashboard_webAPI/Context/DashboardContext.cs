@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Dashboard_webAPI.Core.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Dashboard_webAPI.Models
 {
