@@ -36,6 +36,12 @@ namespace Dashboard_webAPI.Core.Models
             _context.Users.Remove(user);  
             return Task.CompletedTask;
         }
-        public Task SaveChangesAsync() => _context.SaveChangesAsync();
+
+        public string PasswordConfirm(User user)
+        {
+           string confirmPassword =  _context.Users.Select(user => user.Password).Where(e => e == user.Email).ToString();
+           return  confirmPassword;
+        }
+        public async Task SaveChangesAsync() => await _context.SaveChangesAsync();
     }
 }

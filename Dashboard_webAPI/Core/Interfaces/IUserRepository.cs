@@ -8,6 +8,7 @@ namespace Dashboard_webAPI.Core.Interfaces
         Task<User> FindByIdAsync(int id);
         Task<User> FindByNameAsync(string name);
         Task<User> FindByEmailAsync(string email);
+        string PasswordConfirm(User user);
         Task UpdateUser(User user);
         Task DeleteUser(User user);
         Task SaveChangesAsync();
