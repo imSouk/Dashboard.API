@@ -1,7 +1,40 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\pedro\\Desktop\\repositorios\\Dashboard.API\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{410AA952-838E-422C-AC17-2E4E8EB8C8BD}|Dashboard_webAPI\\Dashboard_webAPI.csproj|c:\\users\\pedro\\desktop\\repositorios\\dashboard.api\\dashboard_webapi\\core\\models\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{410AA952-838E-422C-AC17-2E4E8EB8C8BD}|Dashboard_webAPI\\Dashboard_webAPI.csproj|solutionrelative:dashboard_webapi\\core\\models\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{410AA952-838E-422C-AC17-2E4E8EB8C8BD}|Dashboard_webAPI\\Dashboard_webAPI.csproj|c:\\users\\pedro\\desktop\\repositorios\\dashboard.api\\dashboard_webapi\\core\\models\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{410AA952-838E-422C-AC17-2E4E8EB8C8BD}|Dashboard_webAPI\\Dashboard_webAPI.csproj|solutionrelative:dashboard_webapi\\core\\models\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{410AA952-838E-422C-AC17-2E4E8EB8C8BD}|Dashboard_webAPI\\Dashboard_webAPI.csproj|c:\\users\\pedro\\desktop\\repositorios\\dashboard.api\\dashboard_webapi\\core\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{410AA952-838E-422C-AC17-2E4E8EB8C8BD}|Dashboard_webAPI\\Dashboard_webAPI.csproj|solutionrelative:dashboard_webapi\\core\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{410AA952-838E-422C-AC17-2E4E8EB8C8BD}|Dashboard_webAPI\\Dashboard_webAPI.csproj|c:\\users\\pedro\\desktop\\repositorios\\dashboard.api\\dashboard_webapi\\core\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{410AA952-838E-422C-AC17-2E4E8EB8C8BD}|Dashboard_webAPI\\Dashboard_webAPI.csproj|solutionrelative:dashboard_webapi\\core\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{410AA952-838E-422C-AC17-2E4E8EB8C8BD}|Dashboard_webAPI\\Dashboard_webAPI.csproj|c:\\users\\pedro\\desktop\\repositorios\\dashboard.api\\dashboard_webapi\\core\\automappers\\automapperprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{410AA952-838E-422C-AC17-2E4E8EB8C8BD}|Dashboard_webAPI\\Dashboard_webAPI.csproj|solutionrelative:dashboard_webapi\\core\\automappers\\automapperprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{410AA952-838E-422C-AC17-2E4E8EB8C8BD}|Dashboard_webAPI\\Dashboard_webAPI.csproj|c:\\users\\pedro\\desktop\\repositorios\\dashboard.api\\dashboard_webapi\\core\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{410AA952-838E-422C-AC17-2E4E8EB8C8BD}|Dashboard_webAPI\\Dashboard_webAPI.csproj|solutionrelative:dashboard_webapi\\core\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{410AA952-838E-422C-AC17-2E4E8EB8C8BD}|Dashboard_webAPI\\Dashboard_webAPI.csproj|c:\\users\\pedro\\desktop\\repositorios\\dashboard.api\\dashboard_webapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{410AA952-838E-422C-AC17-2E4E8EB8C8BD}|Dashboard_webAPI\\Dashboard_webAPI.csproj|solutionrelative:dashboard_webapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{410AA952-838E-422C-AC17-2E4E8EB8C8BD}|Dashboard_webAPI\\Dashboard_webAPI.csproj|c:\\users\\pedro\\desktop\\repositorios\\dashboard.api\\dashboard_webapi\\core\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{410AA952-838E-422C-AC17-2E4E8EB8C8BD}|Dashboard_webAPI\\Dashboard_webAPI.csproj|solutionrelative:dashboard_webapi\\core\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +42,108 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\pedro\\Desktop\\repositorios\\Dashboard.API\\Dashboard_webAPI\\Core\\Models\\UserRepository.cs",
+              "RelativeDocumentMoniker": "Dashboard_webAPI\\Core\\Models\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\pedro\\Desktop\\repositorios\\Dashboard.API\\Dashboard_webAPI\\Core\\Models\\UserRepository.cs",
+              "RelativeToolTip": "Dashboard_webAPI\\Core\\Models\\UserRepository.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T23:09:05.911Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IUserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\pedro\\Desktop\\repositorios\\Dashboard.API\\Dashboard_webAPI\\Core\\Interfaces\\IUserRepository.cs",
+              "RelativeDocumentMoniker": "Dashboard_webAPI\\Core\\Interfaces\\IUserRepository.cs",
+              "ToolTip": "C:\\Users\\pedro\\Desktop\\repositorios\\Dashboard.API\\Dashboard_webAPI\\Core\\Interfaces\\IUserRepository.cs",
+              "RelativeToolTip": "Dashboard_webAPI\\Core\\Interfaces\\IUserRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T19:04:44.631Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "C:\\Users\\pedro\\Desktop\\repositorios\\Dashboard.API\\Dashboard_webAPI\\Core\\Interfaces\\IUserService.cs",
+              "RelativeDocumentMoniker": "Dashboard_webAPI\\Core\\Interfaces\\IUserService.cs",
+              "ToolTip": "C:\\Users\\pedro\\Desktop\\repositorios\\Dashboard.API\\Dashboard_webAPI\\Core\\Interfaces\\IUserService.cs",
+              "RelativeToolTip": "Dashboard_webAPI\\Core\\Interfaces\\IUserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T18:23:47.734Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\pedro\\Desktop\\repositorios\\Dashboard.API\\Dashboard_webAPI\\Core\\Models\\UserService.cs",
+              "RelativeDocumentMoniker": "Dashboard_webAPI\\Core\\Models\\UserService.cs",
+              "ToolTip": "C:\\Users\\pedro\\Desktop\\repositorios\\Dashboard.API\\Dashboard_webAPI\\Core\\Models\\UserService.cs",
+              "RelativeToolTip": "Dashboard_webAPI\\Core\\Models\\UserService.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAxwBQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T18:01:32.156Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AutoMapperProfile.cs",
+              "DocumentMoniker": "C:\\Users\\pedro\\Desktop\\repositorios\\Dashboard.API\\Dashboard_webAPI\\Core\\AutoMappers\\AutoMapperProfile.cs",
+              "RelativeDocumentMoniker": "Dashboard_webAPI\\Core\\AutoMappers\\AutoMapperProfile.cs",
+              "ToolTip": "C:\\Users\\pedro\\Desktop\\repositorios\\Dashboard.API\\Dashboard_webAPI\\Core\\AutoMappers\\AutoMapperProfile.cs",
+              "RelativeToolTip": "Dashboard_webAPI\\Core\\AutoMappers\\AutoMapperProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T17:16:05.995Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\pedro\\Desktop\\repositorios\\Dashboard.API\\Dashboard_webAPI\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Dashboard_webAPI\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\pedro\\Desktop\\repositorios\\Dashboard.API\\Dashboard_webAPI\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Dashboard_webAPI\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T15:25:25.351Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\pedro\\Desktop\\repositorios\\Dashboard.API\\Dashboard_webAPI\\Core\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Dashboard_webAPI\\Core\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\pedro\\Desktop\\repositorios\\Dashboard.API\\Dashboard_webAPI\\Core\\Models\\User.cs",
+              "RelativeToolTip": "Dashboard_webAPI\\Core\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T15:23:52.514Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UserDto.cs",
+              "DocumentMoniker": "C:\\Users\\pedro\\Desktop\\repositorios\\Dashboard.API\\Dashboard_webAPI\\Core\\Dtos\\UserDto.cs",
+              "RelativeDocumentMoniker": "Dashboard_webAPI\\Core\\Dtos\\UserDto.cs",
+              "ToolTip": "C:\\Users\\pedro\\Desktop\\repositorios\\Dashboard.API\\Dashboard_webAPI\\Core\\Dtos\\UserDto.cs",
+              "RelativeToolTip": "Dashboard_webAPI\\Core\\Dtos\\UserDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T15:23:48.27Z"
             }
           ]
         }

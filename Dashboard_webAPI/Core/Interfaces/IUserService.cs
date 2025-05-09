@@ -1,12 +1,13 @@
+using Dashboard_webAPI.Core.Dtos;
 using Dashboard_webAPI.Core.Models;
 
 namespace Dashboard_webAPI.Core.Interfaces;
 
 public interface IUserService
 {
-    Task<User> CreateUser(User user);
-    Task<User> UpdateUser(User user);
-    Task DeleteUser(User user);
-    Task<List<User>> GetAllUsers();
-    Task<User> GetUser(User user);
+    Task CreateUser(UserDto user);
+    Task UpdateUser(UserDto user);
+    Task DeleteUser(UserDto user);
+    Task<List<UserDto>> GetAllUsers();
+    Task<UserDto> GetUser(UserDto user);
 }
