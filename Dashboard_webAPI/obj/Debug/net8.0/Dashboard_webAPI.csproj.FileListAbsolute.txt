@@ -342,3 +342,11 @@ C:\Users\pedro\Desktop\repositorios\Dashboard.API\Dashboard_webAPI\obj\Debug\net
 C:\Users\pedro\Desktop\repositorios\Dashboard.API\Dashboard_webAPI\obj\Debug\net8.0\Dashboard_webAPI.pdb
 C:\Users\pedro\Desktop\repositorios\Dashboard.API\Dashboard_webAPI\obj\Debug\net8.0\Dashboard_webAPI.genruntimeconfig.cache
 C:\Users\pedro\Desktop\repositorios\Dashboard.API\Dashboard_webAPI\obj\Debug\net8.0\ref\Dashboard_webAPI.dll
+C:\Users\pedro\Desktop\repositorios\Dashboard.API\Dashboard_webAPI\bin\Debug\net8.0\System.Web.Mvc.dll
+C:\Users\pedro\Desktop\repositorios\Dashboard.API\Dashboard_webAPI\bin\Debug\net8.0\System.Web.Razor.dll
+C:\Users\pedro\Desktop\repositorios\Dashboard.API\Dashboard_webAPI\bin\Debug\net8.0\System.Web.Helpers.dll
+C:\Users\pedro\Desktop\repositorios\Dashboard.API\Dashboard_webAPI\bin\Debug\net8.0\System.Web.WebPages.Deployment.dll
+C:\Users\pedro\Desktop\repositorios\Dashboard.API\Dashboard_webAPI\bin\Debug\net8.0\System.Web.WebPages.Razor.dll
+C:\Users\pedro\Desktop\repositorios\Dashboard.API\Dashboard_webAPI\bin\Debug\net8.0\System.Web.WebPages.dll
+C:\Users\pedro\Desktop\repositorios\Dashboard.API\Dashboard_webAPI\bin\Debug\net8.0\Microsoft.Web.Infrastructure.dll
+C:\Users\pedro\Desktop\repositorios\Dashboard.API\Dashboard_webAPI\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

@@ -1,7 +1,9 @@
+using System.Web.Mvc;
 using Dashboard_webAPI.Core.Dtos;
 using Dashboard_webAPI.Core.Interfaces;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Dashboard_webAPI.Core.Models;
 
@@ -17,71 +19,65 @@ public class UserService : IUserService
     public Task CreateUser(UserDto userDto)
     {
             User user = new  User(userDto);
-            try
+            if (user == null)
             {
-                _context.AddUser(user);
-                _context.SaveChangesAsync();
+                throw new Exception("Error Creating User");
             }
-            catch (Exception ex){Console.WriteLine(ex);}
-        return Task.CompletedTask;
+            _context.AddUser(user);
+            _context.SaveChangesAsync();
+            return Task.CompletedTask;
     }
+
+    
+
     public async Task<string> LoginTask(UserDto userDto)
     {
         User missingUser = new User(userDto);
-        try
+        if (missingUser == null)
         {
-            string stats = string.Empty;
+            throw new Exception("Invalid User");
+        }
+        string stats;
+        if (missingUser.Email != null)
+        {
             User findedUser = await _context.FindByEmailAsync(missingUser.Email);
             if (_context.PasswordConfirm(findedUser) == missingUser.Password)
             {
                 stats = "Autorized";
                 return stats;
             }
-            else {
-                stats = "Rejected";
-                return stats; }
         }
-        catch (Exception ex)
-        {
-            Console.WriteLine(ex.Message);
-            return null;
-        }
-        
+        stats = "Rejected";
+        return stats;
     }
 
-    public async Task<Task> UpdateUser(UserDto userDto)
+    public Task UpdateUser(UserDto userDto)
     {
-        User user  = new  User(userDto);
-        try
+        User user = new User(userDto);
+        if (user == null)
         {
-             await _context.UpdateUser(user);
-             await _context.SaveChangesAsync();
-             return Task.CompletedTask;
+            throw new Exception("Error Updating User");
         }
-        catch (Exception ex) {
-          Console.Write(ex);
-          return Task.FromException<Exception>(ex);
-        }
+        _context.UpdateUser(user);
+        _context.SaveChangesAsync();
+        return Task.CompletedTask;
     }
+
     public Task DeleteUser(UserDto userDto)
     {
-        User user = new  User(userDto);
-        try
+        User user = new User(userDto);
+        if (user == null)
         {
-            _context.DeleteUser(user);
-            _context.SaveChangesAsync();
-            return Task.CompletedTask;
+            throw new Exception("Error Deleting User");
         }
-        catch (Exception e)
-        {
-            Console.WriteLine(e); 
-            return Task.FromException<Exception>(e);
-        }
-        
+        _context.DeleteUser(user);
+        _context.SaveChangesAsync();
+        return Task.CompletedTask;
     }
     public Task<List<UserDto>> GetAllUsers()
     {
         throw new NotImplementedException();
     }
-    
 }
+
+    

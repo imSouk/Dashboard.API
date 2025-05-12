@@ -14,7 +14,7 @@ namespace Dashboard_webAPI.Controllers
 
         [HttpPost]
         [Route("/User/Register")]
-        public async Task<IActionResult> RegisterUser(UserDto userDto)
+        public async Task<IActionResult> RegisterUser([FromBody]UserDto userDto)
         {
             try
             {
@@ -39,6 +39,13 @@ namespace Dashboard_webAPI.Controllers
                 return Ok();
             }
             return NotFound();
+        }
+        [HttpPost]
+        [Route("/User/DeleteUser")]
+        public async  Task<IActionResult> DeleteUser([FromBody]UserDto userDto)
+        {
+            var  response =    _userService.DeleteUser(userDto);
+            return Ok(response);
         }
     }
 }

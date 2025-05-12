@@ -8,7 +8,7 @@ public interface IUserService
     Task CreateUser(UserDto user);
     Task<List<UserDto>> GetAllUsers();
     Task<string> LoginTask(UserDto user);
-    Task<Task> UpdateUser(UserDto user);
+    public Task UpdateUser(UserDto user);
     Task DeleteUser(UserDto user);
   
     

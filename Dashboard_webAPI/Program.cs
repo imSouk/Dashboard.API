@@ -1,5 +1,6 @@
 using Dashboard_webAPI.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Web.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,11 +17,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+// Configure the HTTP request pipelinif (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();

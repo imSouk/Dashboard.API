@@ -11,7 +11,7 @@ namespace Dashboard_webAPI.Core.Models
             _context = context;
         }
         public async Task AddUser(User user) => await _context.Users.AddAsync(user);
-        public async Task<User> FindByIdAsync(int id)
+        public async Task<User> FindByIdAsync(Guid id)
         {
             var userFinder = await _context.Users.FindAsync(id);
             return userFinder;
