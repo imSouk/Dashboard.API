@@ -18,7 +18,7 @@ public class UserService : IUserService
     }
     public Task CreateUser(UserDto userDto)
     {
-            User user = new  User(userDto);
+        User user = User.FullDtoInfos(userDto);
             if (user == null)
             {
                 throw new Exception("Error Creating User");
@@ -32,7 +32,7 @@ public class UserService : IUserService
 
     public async Task<string> LoginTask(UserDto userDto)
     {
-        User missingUser = new User(userDto);
+        User missingUser = User.FullDtoInfos(userDto);
         if (missingUser == null)
         {
             throw new Exception("Invalid User");
@@ -53,7 +53,7 @@ public class UserService : IUserService
 
     public Task UpdateUser(UserDto userDto)
     {
-        User user = new User(userDto);
+        User user = User.FullDtoInfos(userDto);
         if (user == null)
         {
             throw new Exception("Error Updating User");
@@ -65,7 +65,7 @@ public class UserService : IUserService
 
     public Task DeleteUser(UserDto userDto)
     {
-        User user = new User(userDto);
+        User user = User.FullDtoInfos(userDto);
         if (user == null)
         {
             throw new Exception("Error Deleting User");

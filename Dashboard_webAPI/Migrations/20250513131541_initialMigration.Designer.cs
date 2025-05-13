@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Dashboard_webAPI.Migrations
 {
     [DbContext(typeof(DashboardContext))]
-    [Migration("20250509184102_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20250513131541_initialMigration")]
+    partial class initialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

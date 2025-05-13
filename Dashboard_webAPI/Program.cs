@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<DashboardContext>(options =>
 {
 
-    options.UseSqlServer("Server=PEDRO-DESKTOP;Database=PEDRO-DESKTOP;Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True;");
+    options.UseSqlServer("Server=PEDRO-DESKTOP;Database=DASHBOARD_API;Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True;");
 
 });
 
@@ -21,12 +21,14 @@ var app = builder.Build();
 
 // Configure the HTTP request pipelinif (app.Environment.IsDevelopment())
 {
+    app.UseCors();
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
 app.UseHttpsRedirection();
-
+app.UseCors(x=>x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

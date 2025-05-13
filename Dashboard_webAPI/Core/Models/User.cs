@@ -4,14 +4,8 @@ using Dashboard_webAPI.Core.Dtos;
 namespace Dashboard_webAPI.Core.Models;
 
 public class User
-{ 
-    public User(UserDto userDto)
-    {
-         this.Name = userDto.Name;
-         this.Email = userDto.Email;
-         this.Password = null;
-    }
-    public enum UserRole 
+{
+    public enum UserRole
     {
         Admin,
         Costumer,
@@ -30,8 +24,22 @@ public class User
     public UserRole Role { get; set; }
     public User()
     {
-            
+
     }
+    public static User BasicDto(UserDto user) => new User
+    {
+        Id = user.Id,
+        Name = user.Name,
+        Email = user.Email,
+    };
+    public static User FullDtoInfos(UserDto user) => new User 
+    {
+        Id = user.Id,
+        Name = user.Name,
+        Password = user.Password,
+        Email = user.Email,
+        Role= user.Role,
+    };
 
 
 }

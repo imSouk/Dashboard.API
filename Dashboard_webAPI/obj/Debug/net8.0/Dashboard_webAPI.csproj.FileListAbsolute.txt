@@ -350,3 +350,6 @@ C:\Users\pedro\Desktop\repositorios\Dashboard.API\Dashboard_webAPI\bin\Debug\net
 C:\Users\pedro\Desktop\repositorios\Dashboard.API\Dashboard_webAPI\bin\Debug\net8.0\System.Web.WebPages.dll
 C:\Users\pedro\Desktop\repositorios\Dashboard.API\Dashboard_webAPI\bin\Debug\net8.0\Microsoft.Web.Infrastructure.dll
 C:\Users\pedro\Desktop\repositorios\Dashboard.API\Dashboard_webAPI\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\pedro\Desktop\repositorios\Dashboard.API\Dashboard_webAPI\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+C:\Users\pedro\Desktop\repositorios\Dashboard.API\Dashboard_webAPI\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Users\pedro\Desktop\repositorios\Dashboard.API\Dashboard_webAPI\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
