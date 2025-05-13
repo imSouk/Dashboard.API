@@ -11,7 +11,7 @@ namespace Dashboard_webAPI.Core.Models
             _context = context;
         }
         public async Task AddUser(User user) => await _context.Users.AddAsync(user);
-        public async Task<User> FindByIdAsync(int id)
+        public async Task<User> FindByIdAsync(Guid id)
         {
             var userFinder = await _context.Users.FindAsync(id);
             return userFinder;
@@ -36,6 +36,12 @@ namespace Dashboard_webAPI.Core.Models
             _context.Users.Remove(user);  
             return Task.CompletedTask;
         }
-        public Task SaveChangesAsync() => _context.SaveChangesAsync();
+
+        public string PasswordConfirm(User user)
+        {
+           string confirmPassword =  _context.Users.Select(user => user.Password).Where(e => e == user.Email).ToString();
+           return  confirmPassword;
+        }
+        public async Task SaveChangesAsync() => await _context.SaveChangesAsync();
     }
 }
