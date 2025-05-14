@@ -5,9 +5,9 @@ namespace Dashboard_webAPI.Core.Interfaces;
 
 public interface IUserService
 {
-    Task CreateUser(UserDto user);
+    Task<User> CreateUser(UserDto user);
     Task<List<UserDto>> GetAllUsers();
-    Task<string> LoginTask(UserDto user);
+    Task<string> LoginTask(LoginDto user);
     public Task UpdateUser(UserDto user);
     Task DeleteUser(UserDto user);
   

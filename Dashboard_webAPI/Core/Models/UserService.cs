@@ -16,43 +16,35 @@ public class UserService : IUserService
         _context = userRepository;
         
     }
-    public Task CreateUser(UserDto userDto)
+    public async Task<User> CreateUser(UserDto userDto)
     {
         User user = User.RegisterDto(userDto);
             if (user == null)
             {
                 throw new Exception("Error Creating User");
             }
-            else 
-            {
-                user.Password = BCrypt.Net.BCrypt.EnhancedHashPassword(userDto.Password, 13);
-            }
-            _context.AddUser(user);
-            _context.SaveChangesAsync();
-            return Task.CompletedTask;
+            user.Password = BCrypt.Net.BCrypt.EnhancedHashPassword(userDto.Password, 13);
+            await _context.AddUser(user);
+            await _context.SaveChangesAsync();
+        return user;
     }
 
     
 
-    public async Task<string> LoginTask(UserDto userDto)
-    {
+    public async Task<string> LoginTask(LoginDto userDto)
+    {   
+        string stats = string.Empty;
         User missingUser = User.LoginDto(userDto);
-        if (missingUser == null)
+        if (missingUser.Password == null && missingUser.Email == null)
         {
             throw new Exception("Invalid User");
         }
-        string stats;
-        if (missingUser.Email != null)
-        {
-            User findedUser = await _context.FindByEmailAsync(missingUser.Email);
-            string hashPassword = _context.PasswordConfirm(findedUser);
-            if (BCrypt.Net.BCrypt.EnhancedVerify(missingUser.Password, findedUser.Password))
-            {
-                stats = "Autorized";
-                return stats;
-            }
+        User findedUser = await _context.FindByEmailAsync(missingUser.Email);
+        string hashPassword = _context.PasswordConfirm(findedUser);
+        if (BCrypt.Net.BCrypt.EnhancedVerify(missingUser.Password, findedUser.Password))
+        { 
+            stats = "Autorized";
         }
-        stats = "Rejected";
         return stats;
     }
 
@@ -68,7 +60,7 @@ public class UserService : IUserService
         return Task.CompletedTask;
     }
 
-    public Task DeleteUser(UserDto userDto)
+    public async Task<User> DeleteUser(UserDto userDto)
     {
         User user = User.RegisterDto(userDto);
         if (user == null)
@@ -77,7 +69,7 @@ public class UserService : IUserService
         }
         _context.DeleteUser(user);
         _context.SaveChangesAsync();
-        return Task.CompletedTask;
+        return await _context.FindByIdAsync(user.Id);
     }
     public Task<List<UserDto>> GetAllUsers()
     {

@@ -2,7 +2,6 @@ using Dashboard_webAPI.Core.Interfaces;
 using Dashboard_webAPI.Core.Models;
 using Dashboard_webAPI.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Web.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,7 +24,8 @@ builder.Services.AddScoped<IUserService,UserService>();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipelinif (app.Environment.IsDevelopment())
+// Configure the HTTP request pipelin
+    if (app.Environment.IsDevelopment())
 {
     //app.UseCors();
     app.UseSwagger();

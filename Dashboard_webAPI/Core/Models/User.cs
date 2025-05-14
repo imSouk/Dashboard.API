@@ -11,13 +11,12 @@ public class User
         Costumer,
     };
     public Guid Id { get; set; }
-    [Required]
+
     [StringLength(15, MinimumLength = 2)]
     public string Name { get; set; }
-    [Required]
-    [StringLength(15, MinimumLength = 7)]
+    
+    [StringLength(60, MinimumLength = 7)]
     public string? Password { get; set; }
-    [Required]
     [EmailAddress]
     [StringLength(100, MinimumLength = 8)]
     public string? Email { get; set; }
@@ -26,7 +25,7 @@ public class User
     {
 
     }
-    public static User LoginDto(UserDto user) => new User
+    public static User LoginDto(LoginDto user) => new User
     {
  
         Password = user.Password,

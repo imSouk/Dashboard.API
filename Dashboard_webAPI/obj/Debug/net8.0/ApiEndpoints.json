@@ -19,34 +19,14 @@
     "ContainingType": "Dashboard_webAPI.Controllers.UserController",
     "Method": "UserLoginRequest",
     "RelativePath": "User/Login",
-    "HttpMethod": "GET",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Id",
-        "Type": "System.Guid",
-        "IsRequired": false
-      },
-      {
-        "Name": "Name",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Password",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Email",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Role",
-        "Type": "System.String",
-        "IsRequired": false
+        "Name": "userDto",
+        "Type": "Dashboard_webAPI.Core.Dtos.LoginDto",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []

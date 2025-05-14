@@ -8,6 +8,11 @@ public class UserDto
     {
         
     }
+    public UserDto(string email, string password)
+    {
+        this.Email = email;
+        this.Password = password;
+    }
     public Guid Id { get; set; }
     public string Name { get; set; }
     public string Password { get; set; }

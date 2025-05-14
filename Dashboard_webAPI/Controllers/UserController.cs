@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Dashboard_webAPI.Controllers
 {
+    [ApiController]
+    [Route("User")]
     public class UserController : ControllerBase
     {
         private readonly IUserService _userService;
@@ -17,27 +19,24 @@ namespace Dashboard_webAPI.Controllers
         [Route("/User/Register")]
         public async Task<IActionResult> RegisterUser([FromBody]UserDto userDto)
         {
-            try
+            var response = await _userService.CreateUser(userDto);   
+            if(response == null )
             {
-                await _userService.CreateUser(userDto);
                 return Ok();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                return BadRequest();
-            }    
+            }if(!ModelState.IsValid)
+                return BadRequest(ModelState);
+        return Ok(); 
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("/User/Login")]
-        public async Task<IActionResult> UserLoginRequest(UserDto userDto)
+        public async Task<IActionResult> UserLoginRequest([FromBody]LoginDto userDto)
         {   
-            string response = String.Empty;
+            string response = String.Empty; 
             response = await _userService.LoginTask(userDto);
             if(response == "Autorized")
             {
-                return Ok();
+                return Ok(response);
             }
             return NotFound();
         }
@@ -45,8 +44,12 @@ namespace Dashboard_webAPI.Controllers
         [Route("/User/DeleteUser")]
         public async  Task<IActionResult> DeleteUser([FromBody]UserDto userDto)
         {
-            var  response =    _userService.DeleteUser(userDto);
-            return Ok(response);
+            var  response = _userService.DeleteUser(userDto);
+            if(response != null) 
+            {
+                return Ok(response);
+            }
+            return BadRequest(ModelState);
         }
     }
 }
