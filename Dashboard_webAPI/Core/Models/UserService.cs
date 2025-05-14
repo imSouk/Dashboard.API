@@ -11,17 +11,21 @@ public class UserService : IUserService
 {
     private readonly IUserRepository _context;
     
-    public UserService(UserRepository userRepository)
+    public UserService(IUserRepository userRepository)
     {
         _context = userRepository;
         
     }
     public Task CreateUser(UserDto userDto)
     {
-        User user = User.FullDtoInfos(userDto);
+        User user = User.RegisterDto(userDto);
             if (user == null)
             {
                 throw new Exception("Error Creating User");
+            }
+            else 
+            {
+                user.Password = BCrypt.Net.BCrypt.EnhancedHashPassword(userDto.Password, 13);
             }
             _context.AddUser(user);
             _context.SaveChangesAsync();
@@ -32,7 +36,7 @@ public class UserService : IUserService
 
     public async Task<string> LoginTask(UserDto userDto)
     {
-        User missingUser = User.FullDtoInfos(userDto);
+        User missingUser = User.LoginDto(userDto);
         if (missingUser == null)
         {
             throw new Exception("Invalid User");
@@ -41,7 +45,8 @@ public class UserService : IUserService
         if (missingUser.Email != null)
         {
             User findedUser = await _context.FindByEmailAsync(missingUser.Email);
-            if (_context.PasswordConfirm(findedUser) == missingUser.Password)
+            string hashPassword = _context.PasswordConfirm(findedUser);
+            if (BCrypt.Net.BCrypt.EnhancedVerify(missingUser.Password, findedUser.Password))
             {
                 stats = "Autorized";
                 return stats;
@@ -53,7 +58,7 @@ public class UserService : IUserService
 
     public Task UpdateUser(UserDto userDto)
     {
-        User user = User.FullDtoInfos(userDto);
+        User user = User.RegisterDto(userDto);
         if (user == null)
         {
             throw new Exception("Error Updating User");
@@ -65,7 +70,7 @@ public class UserService : IUserService
 
     public Task DeleteUser(UserDto userDto)
     {
-        User user = User.FullDtoInfos(userDto);
+        User user = User.RegisterDto(userDto);
         if (user == null)
         {
             throw new Exception("Error Deleting User");

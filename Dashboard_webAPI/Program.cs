@@ -1,3 +1,5 @@
+using Dashboard_webAPI.Core.Interfaces;
+using Dashboard_webAPI.Core.Models;
 using Dashboard_webAPI.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Web.Mvc;
@@ -16,20 +18,24 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IUserService,UserService>();
+
+
 
 var app = builder.Build();
 
 // Configure the HTTP request pipelinif (app.Environment.IsDevelopment())
 {
-    app.UseCors();
+    //app.UseCors();
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
 app.UseHttpsRedirection();
-app.UseCors(x=>x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
-app.UseAuthentication();
-app.UseAuthorization();
+//app.UseCors(x=>x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+//app.UseAuthentication();
+//app.UseAuthorization();
 
 app.MapControllers();
 

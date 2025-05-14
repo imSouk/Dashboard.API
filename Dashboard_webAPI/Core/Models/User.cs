@@ -26,13 +26,13 @@ public class User
     {
 
     }
-    public static User BasicDto(UserDto user) => new User
+    public static User LoginDto(UserDto user) => new User
     {
-        Id = user.Id,
-        Name = user.Name,
+ 
+        Password = user.Password,
         Email = user.Email,
     };
-    public static User FullDtoInfos(UserDto user) => new User 
+    public static User RegisterDto(UserDto user) => new User 
     {
         Id = user.Id,
         Name = user.Name,
@@ -40,6 +40,9 @@ public class User
         Email = user.Email,
         Role= user.Role,
     };
-
+    public User(string Email)
+    {
+        this.Email = Email;
+    }
 
 }

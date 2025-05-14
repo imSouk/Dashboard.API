@@ -1,5 +1,6 @@
 ﻿using Dashboard_webAPI.Core.Interfaces;
 using Dashboard_webAPI.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Dashboard_webAPI.Core.Models
 {
@@ -18,12 +19,12 @@ namespace Dashboard_webAPI.Core.Models
         }
         public async Task<User> FindByNameAsync(string name)
         {
-            var userFinder = await _context.Users.FindAsync(name);
+            var userFinder = await _context.Users.FirstOrDefaultAsync(userFinder => userFinder.Name == name);
             return userFinder;
         }
         public async Task<User> FindByEmailAsync(string email)
         {
-            var userFinder = await _context.Users.FindAsync(email);
+            var userFinder = await _context.Users.FirstOrDefaultAsync(userFinder => userFinder.Email == email);
             return userFinder;
         }
         public Task UpdateUser(User user)

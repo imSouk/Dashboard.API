@@ -4,10 +4,9 @@ namespace Dashboard_webAPI.Core.Dtos;
 
 public class UserDto 
 {
-    public UserDto(User user)
-    {  
-            this.Name = user.Name;
-            this.Email = user.Email;
+    public UserDto()
+    {
+        
     }
     public Guid Id { get; set; }
     public string Name { get; set; }
