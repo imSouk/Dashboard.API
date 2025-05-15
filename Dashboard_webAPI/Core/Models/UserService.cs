@@ -60,16 +60,23 @@ public class UserService : IUserService
         return Task.CompletedTask;
     }
 
-    public async Task<User> DeleteUser(UserDto userDto)
+    public async Task<User> DeleteUser(LoginDto userDto)
     {
-        User user = User.RegisterDto(userDto);
-        if (user == null)
+        User basicUser = User.LoginDto(userDto);
+        if (basicUser == null)
         {
             throw new Exception("Error Deleting User");
         }
-        _context.DeleteUser(user);
-        _context.SaveChangesAsync();
-        return await _context.FindByIdAsync(user.Id);
+        User completeUser = await _context.FindByEmailAsync(basicUser.Email);
+        if (completeUser == null)
+        {
+            { throw new Exception("User not found");
+            }
+        }
+        await _context.DeleteUser(completeUser);
+        await _context.SaveChangesAsync();
+        return completeUser;
+       
     }
     public Task<List<UserDto>> GetAllUsers()
     {

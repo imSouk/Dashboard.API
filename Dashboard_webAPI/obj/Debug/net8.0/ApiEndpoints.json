@@ -9,7 +9,7 @@
     "Parameters": [
       {
         "Name": "userDto",
-        "Type": "Dashboard_webAPI.Core.Dtos.UserDto",
+        "Type": "Dashboard_webAPI.Core.Dtos.LoginDto",
         "IsRequired": true
       }
     ],
