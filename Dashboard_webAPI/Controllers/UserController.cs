@@ -44,7 +44,7 @@ namespace Dashboard_webAPI.Controllers
         [Route("/User/DeleteUser")]
         public async  Task<IActionResult> DeleteUser([FromBody]LoginDto userDto)
         {
-            var  response = _userService.DeleteUser(userDto);
+            var  response = await _userService.DeleteUser(userDto);
             if(response != null) 
             {
                 return Ok(response);
