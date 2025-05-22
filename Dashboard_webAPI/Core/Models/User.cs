@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Dashboard_webAPI.Core.Dtos;
+using Microsoft.EntityFrameworkCore;
 
 namespace Dashboard_webAPI.Core.Models;
 
@@ -11,13 +12,12 @@ public class User
         Costumer,
     };
     public Guid Id { get; set; }
-    [Required]
+ 
     [StringLength(15, MinimumLength = 2)]
     public string Name { get; set; }
-    [Required]
-    [StringLength(15, MinimumLength = 7)]
+    
+    [StringLength(60, MinimumLength = 7)]
     public string? Password { get; set; }
-    [Required]
     [EmailAddress]
     [StringLength(100, MinimumLength = 8)]
     public string? Email { get; set; }
@@ -26,13 +26,13 @@ public class User
     {
 
     }
-    public static User BasicDto(UserDto user) => new User
+    public static User LoginDto(LoginDto user) => new User
     {
-        Id = user.Id,
-        Name = user.Name,
+ 
+        Password = user.Password,
         Email = user.Email,
     };
-    public static User FullDtoInfos(UserDto user) => new User 
+    public static User RegisterDto(UserDto user) => new User 
     {
         Id = user.Id,
         Name = user.Name,
@@ -40,6 +40,9 @@ public class User
         Email = user.Email,
         Role= user.Role,
     };
-
+    public User(string Email)
+    {
+        this.Email = Email;
+    }
 
 }
