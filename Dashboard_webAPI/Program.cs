@@ -2,6 +2,12 @@ using Dashboard_webAPI.Core.Interfaces;
 using Dashboard_webAPI.Core.Models;
 using Dashboard_webAPI.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using Microsoft.AspNetCore.DataProtection;
+using Dashboard_webAPI;
+using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,7 +25,24 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService,UserService>();
-
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).
+    AddJwtBearer(options =>{
+        options.
+        TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = false,
+            ValidateAudience = false,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Settings.SecretKey))
+        };
+        options.RequireHttpsMetadata = false;
+        options.SaveToken = true;
+    }
+);
+builder.Services.AddAuthorization(
+    
+        );
 
 
 var app = builder.Build();
@@ -27,16 +50,15 @@ var app = builder.Build();
 // Configure the HTTP request pipelin
     if (app.Environment.IsDevelopment())
 {
-    //app.UseCors();
+    app.UseCors();
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
 app.UseHttpsRedirection();
-//app.UseCors(x=>x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
-//app.UseAuthentication();
-//app.UseAuthorization();
-
+app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+app.UseAuthentication();
+app.UseAuthorization();
 app.MapControllers();
 
 app.Run();

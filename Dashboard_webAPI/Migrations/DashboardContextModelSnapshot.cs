@@ -22,6 +22,24 @@ namespace Dashboard_webAPI.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("Dashboard_webAPI.Core.Models.End", b =>
+                {
+                    b.Property<Guid>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("num")
+                        .HasColumnType("int");
+
+                    b.Property<string>("rua")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Ends");
+                });
+
             modelBuilder.Entity("Dashboard_webAPI.Core.Models.User", b =>
                 {
                     b.Property<Guid>("Id")
@@ -29,7 +47,6 @@ namespace Dashboard_webAPI.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
@@ -39,7 +56,6 @@ namespace Dashboard_webAPI.Migrations
                         .HasColumnType("nvarchar(15)");
 
                     b.Property<string>("Password")
-                        .IsRequired()
                         .HasMaxLength(60)
                         .HasColumnType("nvarchar(60)");
 

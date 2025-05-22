@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Dashboard_webAPI.Core.Dtos;
+using Microsoft.EntityFrameworkCore;
 
 namespace Dashboard_webAPI.Core.Models;
 
@@ -11,7 +12,7 @@ public class User
         Costumer,
     };
     public Guid Id { get; set; }
-
+ 
     [StringLength(15, MinimumLength = 2)]
     public string Name { get; set; }
     

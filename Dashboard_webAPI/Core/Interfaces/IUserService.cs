@@ -9,7 +9,7 @@ public interface IUserService
     Task<List<UserDto>> GetAllUsers();
     Task<string> LoginTask(LoginDto user);
     public Task UpdateUser(UserDto user);
-    Task DeleteUser(UserDto user);
+    Task<User> DeleteUser(LoginDto user);
   
     
 }
