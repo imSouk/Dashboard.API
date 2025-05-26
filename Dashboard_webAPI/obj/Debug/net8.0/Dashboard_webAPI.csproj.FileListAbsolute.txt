@@ -354,3 +354,5 @@ C:\Users\pedro\Desktop\repositorios\Dashboard.API\Dashboard_webAPI\bin\Debug\net
 C:\Users\pedro\Desktop\repositorios\Dashboard.API\Dashboard_webAPI\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
 C:\Users\pedro\Desktop\repositorios\Dashboard.API\Dashboard_webAPI\bin\Debug\net8.0\BCrypt.Net-Next.dll
 C:\Users\pedro\Desktop\repositorios\Dashboard.API\Dashboard_webAPI\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\pedro\Desktop\repositorios\Dashboard.API\Dashboard_webAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\pedro\Desktop\repositorios\Dashboard.API\Dashboard_webAPI\bin\Debug\net8.0\SecretKey.txt

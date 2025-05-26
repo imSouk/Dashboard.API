@@ -1,10 +1,9 @@
-﻿using Dashboard_webAPI.Core.Dtos;
+﻿using Dashboard_webAPI.Core.Application.Dtos;
 using Dashboard_webAPI.Core.Interfaces;
-using Dashboard_webAPI.Core.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Dashboard_webAPI.Controllers
+namespace Dashboard_webAPI.presentation.Controllers
 {
     [Authorize]
     [ApiController]
@@ -16,7 +15,7 @@ namespace Dashboard_webAPI.Controllers
         {
         _userService = userService;    
         }
-
+        [AllowAnonymous]
         [HttpPost]
         [Route("/User/Register")]
         public async Task<IActionResult> RegisterUser([FromBody]UserDto userDto)
@@ -30,18 +29,18 @@ namespace Dashboard_webAPI.Controllers
         return Ok(); 
         }
 
+        [AllowAnonymous]
         [HttpPost]
         [Route("/User/Login")]
         public async Task<ActionResult<dynamic>> UserLoginRequest([FromBody]LoginDto userDto)
-        {   
-            string response = String.Empty; 
-            response = await _userService.LoginTask(userDto);
-            if(response == "Autorized")
+        {        
+            var response = await _userService.LoginTask(userDto);
+            if (response[0] == "Autorized")
             {
                 return new
                 {
                     user = userDto,
-                    token = response,
+                    token = response[1],
                 };
             }
             return NotFound(new{ message = "usuário ou senha inválidos" });

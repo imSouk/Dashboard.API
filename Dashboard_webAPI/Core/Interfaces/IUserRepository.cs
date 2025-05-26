@@ -1,4 +1,4 @@
-﻿using Dashboard_webAPI.Core.Models;
+﻿using Dashboard_webAPI.Core.Domain.Models;
 
 namespace Dashboard_webAPI.Core.Interfaces
 {

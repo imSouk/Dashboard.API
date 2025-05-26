@@ -1,12 +1,13 @@
+using System.Reflection.Emit;
 using System.Web.Mvc;
-using Dashboard_webAPI.Core.Dtos;
+using Dashboard_webAPI.Core.Application.Dtos;
+using Dashboard_webAPI.Core.Domain.Models;
 using Dashboard_webAPI.Core.Interfaces;
-using Dashboard_webAPI.Services;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 
-namespace Dashboard_webAPI.Core.Models;
+namespace Dashboard_webAPI.Infrastructure.Services;
 
 public class UserService : IUserService
 {
@@ -32,7 +33,7 @@ public class UserService : IUserService
 
     
 
-    public async Task<string> LoginTask(LoginDto userDto)
+    public async Task<List<string>> LoginTask(LoginDto userDto)
     {   
         string stats = string.Empty;
         User missingUser = User.LoginDto(userDto);
@@ -46,9 +47,9 @@ public class UserService : IUserService
         { 
             stats = "Autorized";
             var token = TokenService.GerateToken(userDto);
-            return token;
+            return new List<string> { stats, token };
         }
-        return stats;
+        return new List<string> { stats };
     }
 
     public Task UpdateUser(UserDto userDto)

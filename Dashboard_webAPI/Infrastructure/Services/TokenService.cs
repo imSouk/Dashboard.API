@@ -1,12 +1,11 @@
-﻿using Dashboard_webAPI.Core.Dtos;
-using Dashboard_webAPI.Core.Models;
+﻿using Dashboard_webAPI.Core.Application.Dtos;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace Dashboard_webAPI.Services
+namespace Dashboard_webAPI.Infrastructure.Services
 {
     public static class TokenService
     {
@@ -14,7 +13,7 @@ namespace Dashboard_webAPI.Services
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.UTF8.GetBytes(Settings.SecretKey);
-            var tokenDescription = new SecurityTokenDescriptor
+            SecurityTokenDescriptor tokenDescription = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new[]
                 {
