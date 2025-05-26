@@ -1,7 +1,7 @@
-﻿using Dashboard_webAPI.Core.Models;
+﻿using Dashboard_webAPI.Core.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Dashboard_webAPI.Models
+namespace Dashboard_webAPI.Infrastructure.Context
 {
     public class DashboardContext : DbContext
     {

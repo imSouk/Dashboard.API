@@ -1,6 +1,4 @@
 using Dashboard_webAPI.Core.Interfaces;
-using Dashboard_webAPI.Core.Models;
-using Dashboard_webAPI.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
@@ -8,6 +6,9 @@ using System.Text;
 using Microsoft.AspNetCore.DataProtection;
 using Dashboard_webAPI;
 using Microsoft.IdentityModel.Protocols.OpenIdConnect;
+using Dashboard_webAPI.Infrastructure.Context;
+using Dashboard_webAPI.Infrastructure.Services;
+using Dashboard_webAPI.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 

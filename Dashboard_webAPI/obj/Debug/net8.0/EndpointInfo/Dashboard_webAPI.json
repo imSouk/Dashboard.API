@@ -111,6 +111,9 @@
           "email": {
             "type": "string",
             "nullable": true
+          },
+          "role": {
+            "$ref": "#/components/schemas/UserRole"
           }
         },
         "additionalProperties": false

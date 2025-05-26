@@ -1,8 +1,9 @@
-﻿using Dashboard_webAPI.Core.Interfaces;
-using Dashboard_webAPI.Models;
+﻿using Dashboard_webAPI.Core.Domain.Models;
+using Dashboard_webAPI.Core.Interfaces;
+using Dashboard_webAPI.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
 
-namespace Dashboard_webAPI.Core.Models
+namespace Dashboard_webAPI.Infrastructure
 {
     public class UserRepository : IUserRepository
     {

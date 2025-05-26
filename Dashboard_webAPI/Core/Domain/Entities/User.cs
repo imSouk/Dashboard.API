@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Dashboard_webAPI.Core.Dtos;
+using Dashboard_webAPI.Core.Application.Dtos;
 using Microsoft.EntityFrameworkCore;
 
-namespace Dashboard_webAPI.Core.Models;
+namespace Dashboard_webAPI.Core.Domain.Models;
 
 public class User
 {

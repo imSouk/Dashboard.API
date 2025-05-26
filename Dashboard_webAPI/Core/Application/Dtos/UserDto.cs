@@ -1,6 +1,6 @@
-using Dashboard_webAPI.Core.Models;
+using Dashboard_webAPI.Core.Domain.Models;
 
-namespace Dashboard_webAPI.Core.Dtos;
+namespace Dashboard_webAPI.Core.Application.Dtos;
 
 public class UserDto 
 {
@@ -10,8 +10,8 @@ public class UserDto
     }
     public UserDto(string email, string password)
     {
-        this.Email = email;
-        this.Password = password;
+        Email = email;
+        Password = password;
     }
     public Guid Id { get; set; }
     public string Name { get; set; }

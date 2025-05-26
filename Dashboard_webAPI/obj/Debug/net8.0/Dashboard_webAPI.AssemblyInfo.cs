@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Dashboard_webAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6c901c21f9c0f51f9f9dd52d169d7b9151b28e71")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8e02e6b631bba9361305fcce455413b9e806b388")]
 [assembly: System.Reflection.AssemblyProductAttribute("Dashboard_webAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Dashboard_webAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
