@@ -7,7 +7,7 @@ namespace Dashboard_webAPI.presentation.Controllers
 {
     [Authorize]
     [ApiController]
-    [Route("User")]
+    [Route("/User")]
     public class UserController : ControllerBase
     {
         private readonly IUserService _userService;
@@ -17,7 +17,7 @@ namespace Dashboard_webAPI.presentation.Controllers
         }
         [AllowAnonymous]
         [HttpPost]
-        [Route("/User/Register")]
+        [Route("/Register")]
         public async Task<IActionResult> RegisterUser([FromBody]UserDto userDto)
         {
             var response = await _userService.CreateUser(userDto);   
