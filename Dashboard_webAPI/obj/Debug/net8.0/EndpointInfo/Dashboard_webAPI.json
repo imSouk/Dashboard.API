@@ -5,7 +5,7 @@
     "version": "1.0"
   },
   "paths": {
-    "/User/Register": {
+    "/Register": {
       "post": {
         "tags": [
           "User"
@@ -121,10 +121,6 @@
       "UserDto": {
         "type": "object",
         "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid"
-          },
           "name": {
             "type": "string",
             "nullable": true
@@ -136,9 +132,6 @@
           "email": {
             "type": "string",
             "nullable": true
-          },
-          "role": {
-            "$ref": "#/components/schemas/UserRole"
           }
         },
         "additionalProperties": false

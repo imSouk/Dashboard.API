@@ -34,11 +34,11 @@ public class User
     };
     public static User RegisterDto(UserDto user) => new User 
     {
-        Id = user.Id,
+        Id = Guid.NewGuid(),
         Name = user.Name,
         Password = user.Password,
         Email = user.Email,
-        Role= user.Role,
+        Role= UserRole.Costumer,
     };
     public User(string Email)
     {

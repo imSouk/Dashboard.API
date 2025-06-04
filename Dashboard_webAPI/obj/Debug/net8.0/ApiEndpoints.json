@@ -1,6 +1,22 @@
 [
   {
     "ContainingType": "Dashboard_webAPI.presentation.Controllers.UserController",
+    "Method": "RegisterUser",
+    "RelativePath": "Register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userDto",
+        "Type": "Dashboard_webAPI.Core.Application.Dtos.UserDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Dashboard_webAPI.presentation.Controllers.UserController",
     "Method": "DeleteUser",
     "RelativePath": "User/DeleteUser",
     "HttpMethod": "POST",
@@ -26,22 +42,6 @@
       {
         "Name": "userDto",
         "Type": "Dashboard_webAPI.Core.Application.Dtos.LoginDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Dashboard_webAPI.presentation.Controllers.UserController",
-    "Method": "RegisterUser",
-    "RelativePath": "User/Register",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "userDto",
-        "Type": "Dashboard_webAPI.Core.Application.Dtos.UserDto",
         "IsRequired": true
       }
     ],
