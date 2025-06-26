@@ -4,6 +4,7 @@ using Dashboard_webAPI.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Dashboard_webAPI.Migrations
 {
     [DbContext(typeof(DashboardContext))]
-    partial class DashboardContextModelSnapshot : ModelSnapshot
+    [Migration("20250626184154_orders")]
+    partial class orders
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -28,11 +31,12 @@ namespace Dashboard_webAPI.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<decimal>("Base_selling_price")
-                        .HasColumnType("decimal(18, 2)");
+                    b.Property<string>("Base_selling_price")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Base_selling_quantity")
-                        .HasColumnType("int");
+                    b.Property<decimal>("Base_selling_quantity")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("OderDescription")
                         .IsRequired()

@@ -1,5 +1,37 @@
 [
   {
+    "ContainingType": "Dashboard_webAPI.presentation.Controllers.OrderController",
+    "Method": "Index",
+    "RelativePath": "CreateOrder",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "order",
+        "Type": "Dashboard_webAPI.Core.Domain.Models.Order",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Dashboard_webAPI.presentation.Controllers.OrderController",
+    "Method": "DeleteUser",
+    "RelativePath": "DeleteOrder",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "order",
+        "Type": "Dashboard_webAPI.Core.Domain.Models.Order",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Dashboard_webAPI.presentation.Controllers.UserController",
     "Method": "RegisterUser",
     "RelativePath": "Register",

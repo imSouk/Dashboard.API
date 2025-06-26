@@ -5,6 +5,68 @@
     "version": "1.0"
   },
   "paths": {
+    "/CreateOrder": {
+      "post": {
+        "tags": [
+          "Order"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Order"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Order"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Order"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/DeleteOrder": {
+      "post": {
+        "tags": [
+          "Order"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Order"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Order"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Order"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/Register": {
       "post": {
         "tags": [
@@ -114,6 +176,32 @@
           },
           "role": {
             "$ref": "#/components/schemas/UserRole"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Order": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "productName": {
+            "type": "string",
+            "nullable": true
+          },
+          "oderDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "base_selling_price": {
+            "type": "number",
+            "format": "double"
+          },
+          "base_selling_quantity": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false
