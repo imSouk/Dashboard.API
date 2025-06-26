@@ -3,9 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using Microsoft.AspNetCore.DataProtection;
 using Dashboard_webAPI;
-using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 using Dashboard_webAPI.Infrastructure.Context;
 using Dashboard_webAPI.Infrastructure.Services;
 using Dashboard_webAPI.Infrastructure;
@@ -21,11 +19,12 @@ builder.Services.AddDbContext<DashboardContext>(options =>
 });
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService,UserService>();
+builder.Services.AddScoped<IOrderRepository, OrderRepository>();
+builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).
     AddJwtBearer(options =>{
         options.
@@ -44,8 +43,6 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).
 builder.Services.AddAuthorization(
     
         );
-
-
 var app = builder.Build();
 
 // Configure the HTTP request pipelin

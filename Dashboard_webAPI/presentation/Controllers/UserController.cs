@@ -1,5 +1,6 @@
 ﻿using Dashboard_webAPI.Core.Application.Dtos;
 using Dashboard_webAPI.Core.Interfaces;
+using Dashboard_webAPI.Infrastructure.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
