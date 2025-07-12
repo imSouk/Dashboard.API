@@ -23,7 +23,11 @@ public class OrderRepository : IOrderRepository
        var orderFinded =  await _context.Orders.FirstOrDefaultAsync(order => order.ProductName == name);
        return orderFinded;
     }
-  //Think about "how can i effectively update an order?"
+    public async Task<List<Order>> GetAllOrders()
+    {
+        var orders = await _context.Orders.ToListAsync();
+        return orders;
+    }
     public Task UpdateOrder(Order order)
     {
          _context.Orders.Update(order);   

@@ -9,5 +9,6 @@ public interface IOrderRepository
     Task<Order> FindByNameAsync(string name);
     Task UpdateOrder(Order order);
     Task DeleteOrder(Order order);
+    Task<List<Order>> GetAllOrders();
     Task SaveChangesAsync();
 }

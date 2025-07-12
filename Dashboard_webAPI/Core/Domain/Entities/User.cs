@@ -20,7 +20,7 @@ public class User
     public string? Password { get; set; }
     [EmailAddress]
     [StringLength(100, MinimumLength = 8)]
-    public string? Email { get; set; }
+    public string Email { get; set; }
     public UserRole Role { get; set; }
     public User()
     {

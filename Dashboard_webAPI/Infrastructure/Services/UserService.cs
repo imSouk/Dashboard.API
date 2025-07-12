@@ -1,5 +1,4 @@
 using System.Reflection.Emit;
-using System.Web.Mvc;
 using Dashboard_webAPI.Core.Application.Dtos;
 using Dashboard_webAPI.Core.Domain.Models;
 using Dashboard_webAPI.Core.Interfaces;
@@ -12,11 +11,9 @@ namespace Dashboard_webAPI.Infrastructure.Services;
 public class UserService : IUserService
 {
     private readonly IUserRepository _context;
-    
-    public UserService(IUserRepository userRepository )
+    public UserService(IUserRepository userRepository)
     {
         _context = userRepository;
-        
     }
     public async Task<User> CreateUser(UserDto userDto)
     {
@@ -33,7 +30,7 @@ public class UserService : IUserService
 
     
 
-    public async Task<List<string>> LoginTask(LoginDto userDto)
+    public async Task<List<string>> LoginTask(LoginDto userDto, HttpResponse httpRequest)
     {   
         string stats = string.Empty;
         User missingUser = User.LoginDto(userDto);
@@ -42,11 +39,15 @@ public class UserService : IUserService
             throw new Exception("Invalid User");
         }
         User findedUser = await _context.FindByEmailAsync(missingUser.Email);
+        if(findedUser == null)
+        {
+            throw new Exception("Usuário não autorizado,verifique a senha e email fornecidos.");
+        } 
         string hashPassword = _context.PasswordConfirm(findedUser);
         if (BCrypt.Net.BCrypt.EnhancedVerify(missingUser.Password, findedUser.Password))
-        { 
+        {
             stats = "Autorized";
-            var token = TokenService.GerateToken(userDto);
+            var token = TokenService.GerateToken(findedUser);
             return new List<string> { stats, token };
         }
         return new List<string> { stats };

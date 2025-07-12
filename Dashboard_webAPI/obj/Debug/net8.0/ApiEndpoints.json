@@ -8,8 +8,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "order",
-        "Type": "Dashboard_webAPI.Core.Domain.Models.Order",
+        "Name": "orderDto",
+        "Type": "Dashboard_webAPI.Core.Application.Dtos.OrderDto",
         "IsRequired": true
       }
     ],
@@ -29,6 +29,16 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Dashboard_webAPI.presentation.Controllers.OrderController",
+    "Method": "getAllOrders",
+    "RelativePath": "GetAllOrders",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {

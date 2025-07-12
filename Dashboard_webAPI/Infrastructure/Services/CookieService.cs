@@ -1,10 +1,12 @@
 ﻿
 
+using Dashboard_webAPI.Core.Interfaces;
+
 namespace Dashboard_webAPI.Infrastructure.Services
 {
-    public class CookieService
+    public class CookieService : ICookieService
     {
-        public static HttpResponse GenerateCookie(HttpResponse response, string token)
+        public  HttpResponse GenerateCookie(HttpResponse response, string token)
         {
             
             response.Cookies.Append("UserCookie", token);
