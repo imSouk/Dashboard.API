@@ -7,7 +7,7 @@ public interface IUserService
 {
     Task<User> CreateUser(UserDto user);
     Task<List<UserDto>> GetAllUsers();
-    Task<List<string>> LoginTask(LoginDto user);
+    Task<List<string>> LoginTask(LoginDto user, HttpResponse httpReponse);
     public Task UpdateUser(UserDto user);
     Task<User> DeleteUser(LoginDto user);
   

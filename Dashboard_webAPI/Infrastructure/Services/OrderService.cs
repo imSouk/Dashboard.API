@@ -13,20 +13,18 @@ namespace Dashboard_webAPI.Infrastructure.Services
             _context = orderRepository;
 
         }
-        public async Task<Order> CreateOrder(Order order)
+        public async Task<Order> CreateOrder(OrderDto orderdto)
         {
-            //The order cannot arrive here void?
-            //maybe we can verify if the order already exists? or this will make that for us?
-           try
-            {
 
+            Order order = Order.CreateOrder(orderdto);
+            try
+            {
                 await _context.AddOrder(order);
                 await _context.SaveChangesAsync();
             }
             catch (Exception ex)
             {
                 throw new Exception("An error occurred while creating the order.", ex);
-               
             }
             return order;
         }
@@ -44,7 +42,9 @@ namespace Dashboard_webAPI.Infrastructure.Services
 
         public Task<List<Order>> GetAllOrders()
         {
-            throw new NotImplementedException();
+            var orders = _context.GetAllOrders();
+            return orders;
+
         }
 
        

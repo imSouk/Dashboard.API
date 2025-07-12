@@ -21,13 +21,13 @@ namespace Dashboard_webAPI.presentation.Controllers
         [AllowAnonymous]
         [HttpPost]
         [Route("/CreateOrder")]
-        public async Task<IActionResult> Index([FromBody]Order order )
+        public async Task<IActionResult> Index([FromBody]OrderDto orderDto )
         {
-            if (order == null)
+            if (orderDto == null)
             {
                 return BadRequest("Order cannot be null");
             }
-            var response = await _orderService.CreateOrder(order);
+                var response = await _orderService.CreateOrder(orderDto);
             return Ok();
 
         }
@@ -44,5 +44,19 @@ namespace Dashboard_webAPI.presentation.Controllers
             
             return Ok(response);
         }
+        [AllowAnonymous]
+        [HttpGet]
+        [Route("/GetAllOrders")]
+        public async Task<IActionResult> getAllOrders()
+        {
+            
+            var response = await _orderService.GetAllOrders();
+            if (response == null || !response.Any())
+            {
+                return NotFound("No orders found.");
+            }
+            return Ok(response);
+        }
+
     }
 }

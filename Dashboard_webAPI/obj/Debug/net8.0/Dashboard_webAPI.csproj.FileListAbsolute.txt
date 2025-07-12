@@ -183,12 +183,6 @@ C:\Users\pedro\Desktop\repositorios\Dashboard.API\Dashboard_webAPI\bin\Debug\net
 C:\Users\pedro\Desktop\repositorios\Dashboard.API\Dashboard_webAPI\bin\Debug\net8.0\Azure.Identity.dll
 C:\Users\pedro\Desktop\repositorios\Dashboard.API\Dashboard_webAPI\bin\Debug\net8.0\BCrypt.Net-Next.dll
 C:\Users\pedro\Desktop\repositorios\Dashboard.API\Dashboard_webAPI\bin\Debug\net8.0\Humanizer.dll
-C:\Users\pedro\Desktop\repositorios\Dashboard.API\Dashboard_webAPI\bin\Debug\net8.0\System.Web.Mvc.dll
-C:\Users\pedro\Desktop\repositorios\Dashboard.API\Dashboard_webAPI\bin\Debug\net8.0\System.Web.Razor.dll
-C:\Users\pedro\Desktop\repositorios\Dashboard.API\Dashboard_webAPI\bin\Debug\net8.0\System.Web.Helpers.dll
-C:\Users\pedro\Desktop\repositorios\Dashboard.API\Dashboard_webAPI\bin\Debug\net8.0\System.Web.WebPages.Deployment.dll
-C:\Users\pedro\Desktop\repositorios\Dashboard.API\Dashboard_webAPI\bin\Debug\net8.0\System.Web.WebPages.Razor.dll
-C:\Users\pedro\Desktop\repositorios\Dashboard.API\Dashboard_webAPI\bin\Debug\net8.0\System.Web.WebPages.dll
 C:\Users\pedro\Desktop\repositorios\Dashboard.API\Dashboard_webAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\pedro\Desktop\repositorios\Dashboard.API\Dashboard_webAPI\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\pedro\Desktop\repositorios\Dashboard.API\Dashboard_webAPI\bin\Debug\net8.0\Microsoft.Build.Locator.dll
@@ -227,7 +221,6 @@ C:\Users\pedro\Desktop\repositorios\Dashboard.API\Dashboard_webAPI\bin\Debug\net
 C:\Users\pedro\Desktop\repositorios\Dashboard.API\Dashboard_webAPI\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\pedro\Desktop\repositorios\Dashboard.API\Dashboard_webAPI\bin\Debug\net8.0\Microsoft.OpenApi.dll
 C:\Users\pedro\Desktop\repositorios\Dashboard.API\Dashboard_webAPI\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
-C:\Users\pedro\Desktop\repositorios\Dashboard.API\Dashboard_webAPI\bin\Debug\net8.0\Microsoft.Web.Infrastructure.dll
 C:\Users\pedro\Desktop\repositorios\Dashboard.API\Dashboard_webAPI\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\pedro\Desktop\repositorios\Dashboard.API\Dashboard_webAPI\bin\Debug\net8.0\Mono.TextTemplating.dll
 C:\Users\pedro\Desktop\repositorios\Dashboard.API\Dashboard_webAPI\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll

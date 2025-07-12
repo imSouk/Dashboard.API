@@ -14,17 +14,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Order"
+                "$ref": "#/components/schemas/OrderDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Order"
+                "$ref": "#/components/schemas/OrderDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Order"
+                "$ref": "#/components/schemas/OrderDto"
               }
             }
           }
@@ -60,6 +60,18 @@
             }
           }
         },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/GetAllOrders": {
+      "get": {
+        "tags": [
+          "Order"
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -187,6 +199,10 @@
             "type": "string",
             "format": "uuid"
           },
+          "customerId": {
+            "type": "string",
+            "format": "uuid"
+          },
           "productName": {
             "type": "string",
             "nullable": true
@@ -202,9 +218,41 @@
           "base_selling_quantity": {
             "type": "integer",
             "format": "int32"
+          },
+          "orderStats": {
+            "$ref": "#/components/schemas/OrderStats"
           }
         },
         "additionalProperties": false
+      },
+      "OrderDto": {
+        "type": "object",
+        "properties": {
+          "productName": {
+            "type": "string",
+            "nullable": true
+          },
+          "orderDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "baseSellingQuantity": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "OrderStats": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "type": "integer",
+        "format": "int32"
       },
       "UserDto": {
         "type": "object",
