@@ -7,6 +7,8 @@ using Dashboard_webAPI;
 using Dashboard_webAPI.Infrastructure.Context;
 using Dashboard_webAPI.Infrastructure.Services;
 using Dashboard_webAPI.Infrastructure;
+using Microsoft.OpenApi.Models;
+using Microsoft.AspNetCore.DataProtection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,7 +22,34 @@ builder.Services.AddDbContext<DashboardContext>(options =>
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    
+    options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        Name = "Authorization", 
+        Type = SecuritySchemeType.Http, 
+        Scheme = "Bearer", 
+        BearerFormat = "JWT", 
+        In = ParameterLocation.Header, 
+        Description = "Insira o token JWT desta forma: {seu token}" 
+    });
+    options.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer" 
+                }
+            },
+            new string[] {}
+        }
+    });
+});
+
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService,UserService>();
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
@@ -38,7 +67,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Settings.SecretKey))
         };
         options.RequireHttpsMetadata = false;
-        options.SaveToken = true;
+        options.SaveToken = true;       
     }
 );
 builder.Services.AddAuthorization(

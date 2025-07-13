@@ -20,14 +20,15 @@ namespace Dashboard_webAPI.Infrastructure.Services
                 {
                     Subject = new ClaimsIdentity(new[]
                     {
-                        new Claim(ClaimTypes.PrimarySid, user.Id.ToString()),
+                        new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
                         new Claim(ClaimTypes.Name, user.Name),
                         new Claim(ClaimTypes.Email, user.Email),
                         new Claim(ClaimTypes.Role, user.Role.ToString())
                     }),
+                    NotBefore = DateTime.UtcNow.AddMinutes(-50),
                     Expires = DateTime.UtcNow.AddHours(8),
                     SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature),
-                
+
                 };
                 var token = tokenHandler.CreateToken(tokenDescription);
                 return tokenHandler.WriteToken(token);
