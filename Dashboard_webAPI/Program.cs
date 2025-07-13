@@ -30,7 +30,7 @@ builder.Services.AddSwaggerGen(options =>
         Name = "Authorization", 
         Type = SecuritySchemeType.Http, 
         Scheme = "Bearer", 
-        BearerFormat = "JWT", 
+        BearerFormat = "JWT",
         In = ParameterLocation.Header
     });
     options.AddSecurityRequirement(new OpenApiSecurityRequirement
