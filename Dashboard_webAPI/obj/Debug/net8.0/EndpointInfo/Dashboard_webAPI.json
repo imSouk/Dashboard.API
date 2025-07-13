@@ -201,7 +201,7 @@
           },
           "customerId": {
             "type": "string",
-            "format": "uuid"
+            "nullable": true
           },
           "productName": {
             "type": "string",
@@ -280,6 +280,19 @@
         "type": "integer",
         "format": "int32"
       }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "http",
+        "description": "Insira o token JWT desta forma: {seu token}",
+        "scheme": "Bearer",
+        "bearerFormat": "JWT"
+      }
     }
-  }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
 }

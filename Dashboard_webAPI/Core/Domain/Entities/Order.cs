@@ -15,7 +15,7 @@ public class Order
         Cancelled
     }
     public Guid Id { get; set; }   
-    public Guid CustomerId { get; set; }
+    public string CustomerId { get; set; }
     public string ProductName { get; set; }
 
     public string OderDescription { get; set; }
@@ -24,12 +24,13 @@ public class Order
     public int Base_selling_quantity { get; set; }
     public OrderStats orderStats { get; set; }
 
-    public static Order CreateOrder(OrderDto orderDto)
+    public static Order CreateOrder(OrderDto orderDto,string id)
     {
         return new Order
         {
             Id = Guid.NewGuid(), 
             ProductName = orderDto.ProductName,
+            CustomerId = id,
             OderDescription = orderDto.OrderDescription,
             Base_selling_price = 50 * orderDto.BaseSellingQuantity,
             Base_selling_quantity = orderDto.BaseSellingQuantity,

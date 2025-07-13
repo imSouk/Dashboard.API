@@ -13,10 +13,10 @@ namespace Dashboard_webAPI.Infrastructure.Services
             _context = orderRepository;
 
         }
-        public async Task<Order> CreateOrder(OrderDto orderdto)
+        public async Task<Order> CreateOrder(OrderDto orderdto, string id)
         {
 
-            Order order = Order.CreateOrder(orderdto);
+            Order order = Order.CreateOrder(orderdto, id);
             try
             {
                 await _context.AddOrder(order);

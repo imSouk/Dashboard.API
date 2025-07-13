@@ -1,9 +1,9 @@
 ﻿using Dashboard_webAPI.Core.Application.Dtos;
 using Dashboard_webAPI.Core.Domain.Models;
 using Dashboard_webAPI.Core.Interfaces;
-using Dashboard_webAPI.Infrastructure.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace Dashboard_webAPI.presentation.Controllers
 {
@@ -18,7 +18,7 @@ namespace Dashboard_webAPI.presentation.Controllers
         {
                 _orderService = orderService;
         }
-        [AllowAnonymous]
+        [Authorize]
         [HttpPost]
         [Route("/CreateOrder")]
         public async Task<IActionResult> Index([FromBody]OrderDto orderDto )
@@ -27,7 +27,8 @@ namespace Dashboard_webAPI.presentation.Controllers
             {
                 return BadRequest("Order cannot be null");
             }
-                var response = await _orderService.CreateOrder(orderDto);
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier).ToString();
+                var response = await _orderService.CreateOrder(orderDto,userId);
             return Ok();
 
         }
